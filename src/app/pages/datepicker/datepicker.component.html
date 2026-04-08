@@ -1,0 +1,21 @@
+<ion-content>
+  <div class="largBox">
+    <div class="smallBox">
+      <div class="datetime-wrapper">
+        <ion-datetime dir="ltr"
+          locale="en-US"
+          [preferWheel]="false"
+          presentation="date"
+          (ionCancel)="functionClosePage()"
+          (ionChange)="selectDate($event)"
+          [showDefaultButtons]="true"
+          doneText="{{ok}}"
+          cancelText="{{cancel}}"
+          mode="md"
+          min="2020-01-01"   
+          max="2065-12-31"
+        ></ion-datetime>
+      </div>
+    </div>
+  </div>
+</ion-content>

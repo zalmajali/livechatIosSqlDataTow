@@ -1,0 +1,44 @@
+ion-content {
+  --background: #0000003d;           // ده كويس للـ backdrop شفاف
+  background: #0000003d;
+  background-size: cover;
+  background-position: center;
+}
+
+.largBox {
+  width: 100%;
+  display: flex;                     // أفضل من text-align للـ centering
+  justify-content: center;
+  align-items: flex-start;           // يساعد في الـ positioning
+}
+
+.smallBox {
+  margin-top: 100px;                 // كويس، بس ممكن تخليه أقل لو الشاشة صغيرة
+  text-align: center;
+  border-radius: 12px;               // أجمل شوية (اختياري)
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);  // shadow أنعم وأحدث
+  -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  width: 340px;                      // 350px كويس، بس 340 أحياناً أفضل للـ padding
+  max-width: 90%;                    // مهم عشان الشاشات الصغيرة
+  background: white;                 // ← أضف ده لو مش موجود (خلفية بيضاء واضحة)
+  overflow: hidden;                  // يمنع أي overflow غريب
+  border: 1px solid rgba(0, 0, 0, 0.1); // حدود خفيفة (اختياري)
+}
+
+/* Workaround مهم جداً لمشكلة الـ flicker / disappear */
+.datetime-wrapper {
+  min-height: 380px;                 // أو 400px – ده يمنع إن الـ component يتحمل بحجم صفر
+  width: 100%;
+  display: block;
+}
+ion-datetime {
+  .calendar-body,
+  .calendar-day,
+  .calendar-month,
+  .calendar-weekdays {
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: #000 !important;          // لو الأرقام بتبقى white على white
+  }
+}

@@ -1,0 +1,107 @@
+ion-content{
+    border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	--keyboard-offset: 0 !important;
+    --background:transparent;
+    --backdrop-opacity:0
+}
+.formLoginDiv{
+	background: #ffffff;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-top: auto;
+}
+.teamNameIcon{
+	font-size: 20px;
+    color: #F48022;
+}
+.teamNameDiv{
+	padding-left: 15px;
+	padding-right: 15px;
+	color: #214376;
+	font-size: 15px;
+}
+
+
+.center_div {
+    width: 100%;
+    padding: 0px 16px;
+}
+.input {
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin: 13px 0px 5px 0px;
+}
+.icon {
+    color: #F48022;
+    padding: 0px 10px;
+    width: 1.5em;
+    height: 1.3em;
+}
+.iconTime{
+    color: #F48022;
+    padding: 0px 10px;
+    width: 2.2em;
+    height: 1.3em;
+}
+.iconText {
+    color: #F48022;
+    padding: 0px 10px;
+    width: 1.5em;
+    height: 1.3em;
+    position: relative;
+    top: -30px;
+}
+.closeIcon {
+    color: #F48022;
+    width: 1.5em;
+    height: 1.3em;
+}
+ion-input {
+    padding-left: 10px;
+}
+.ion-title{
+    padding-inline-start:0px !important;
+}
+ion-select {
+    opacity:0.6;
+	color:#000000;
+	width:100%;
+    min-height: 43px;
+}
+.spaceBet{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.item {
+    display: flex;
+    justify-content: space-between;
+}
+.buttonDiv{
+	margin-top: 20px;
+	text-align: center;
+}
+ion-radio {
+	--color:#ff7901 !important;
+	--color-checked:#ff7901 !important;
+    padding-left: 20px;
+    direction: rtl;
+    padding-right: 20px;
+    background-color: #ffffff;
+    color: #214376;
+    font-size: 15px;
+}
+.divClose{
+    text-align: end;
+    position: relative;
+    top: 5px;
+    z-index: 10;
+}
+.iconClose{
+    color: #F48022;
+    font-size: 25px;
+}

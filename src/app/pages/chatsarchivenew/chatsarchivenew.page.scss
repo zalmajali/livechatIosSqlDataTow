@@ -1,0 +1,422 @@
+ion-content{
+	--background:#ffffff !important;
+	background:#ffffff !important;
+	--keyboard-offset: 0 !important;
+    --overflow: hidden !important;
+}
+ion-toolbar{
+    background:#ffffff !important;
+    --background:#ffffff !important;
+}
+.imageLogo{
+	width:50px;
+}
+.colImage{
+    padding:0px;
+    text-align: start;
+}
+.colIcon{
+    padding:0px;
+    text-align: end;
+}
+.logoName{
+    display: inline-block;
+    vertical-align: top;
+    padding: 7px 10px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #214376;
+}
+.logoTitle{
+    font-size: 13px;
+    color: #8496B0;
+    padding-top: 5px;
+}
+.divIcon{
+    padding: 20px 7px;
+}
+.searchIcon{
+    font-size: 30px;
+    color: #214376;
+}
+.imageDiv{
+	padding: 5px 0px;
+}
+.formLoginDiv {
+  background: #EFF3F9;
+  height: calc(100vh - (20px + 25px)); /* هذا هو مفتاح الحل */
+  overflow-y: auto;
+  padding-bottom: 85px; /* يمكنك الاحتفاظ بهذا إذا كان يحل مشكلة الرؤية */
+}
+.chat-list {
+    flex-direction: column-reverse;
+    height: 99%;
+    overflow: auto;
+    padding-right: 12px;
+    padding-left: 15px;
+  }
+  //footer
+.footer{
+  padding-bottom: 7px;
+    bottom:0px;
+    background: #EFF3F9;
+
+}
+.addContactLeft{
+    position: fixed;
+    bottom: 90px;
+    left: 15px;
+}
+.addContactRight{
+    position: fixed;
+    bottom: 90px;
+    right: 15px;
+}
+.adContactImage{
+	width:60px;
+}
+ion-textarea{
+    margin-left: 8px;
+    margin-right: 8px;
+    background: #ffffff;
+    color:#000000;
+    max-height: 100px;
+    overflow-y: auto;
+    resize: none;
+    box-sizing: border-box;
+    --placeholder-color:#b6b6b5;
+    --placeholder-opacity:1;
+    --padding-top:15px;
+    --padding-bottom:0px;
+}
+ion-textarea::part(native)::placeholder {
+  transform: translateY(10px); /* Move placeholder down */
+}
+.footerPad{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.spanIcon{
+    position: relative;
+    bottom: 11px;
+}
+.sendMsgRight{
+    border-radius: 20px;
+    margin-left: 55px;
+}
+.sendMsgLeft{
+    border-radius: 20px;
+    margin-right: 55px;
+}
+.selectDataToSendRight{
+    position: absolute;
+    bottom: -1px;
+    left: 0px;
+    z-index: 100;
+    padding-left: 5px;
+    padding-right: 5px;
+} 
+.selectDataToSendLeft{
+    position: absolute;
+    bottom: -1px;
+    right: 0px;
+    z-index: 100;
+    padding-left: 5px;
+    padding-right: 5px;
+} 
+.smileRight{
+    padding-right: 7px;width: 40px;
+}
+.smileleft{
+    padding-left: 7px;width: 40px;
+}
+.divImages{
+  height: 100%; display: flex; flex-direction: column; justify-content: flex-end;padding-bottom: 13px;
+}
+.smileLeft{
+    padding-left: 10px;width: 45px;
+}
+//box en
+.chat-boxUserLeft{
+    display: inline-block;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    background-color: #F48022;
+    color:#ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 12px 8px;
+    max-width: 75%;
+    line-height:20px;
+    font-size: 14px;
+  }
+  .chat-boxUserLeft:after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    right: -19px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent #F48022;
+  }
+  .chat-boxULeft{
+    text-align: -webkit-right;
+  }
+  .chat-boxsubortLeft { 
+    display: inline-block;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    background-color: #ffffff;
+    color:#214376;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 12px 8px;
+    max-width: 75%;
+    line-height:20px;
+    font-size: 14px;
+  }
+  .chat-boxsubortLeft:after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    border-width: 10px;
+    border-style: solid;
+    left: -19px;
+    border-color: transparent #ffffff transparent transparent;
+  }
+  .chat-boxsubortLeftPriv { 
+    display: inline-block;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    color: #853e07;
+    background-color: #fdd6b8;
+    border-color: #f8c299;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 12px 8px;
+    max-width: 75%;
+    line-height:20px;
+    font-size: 14px;
+  }
+  .chat-boxsubortLeftPriv:after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    border-width: 10px;
+    border-style: solid;
+    left: -19px;
+    border-color: transparent #f8c299 transparent transparent;
+  }
+  .chat-boxSLeft{
+    text-align: -webkit-left;
+  }
+//box ar
+.chat-boxUserRight {
+    display: inline-block;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    background-color: #F48022;
+    color:#ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 12px 8px;
+    max-width: 250px;
+  }
+  .chat-boxUserRight:after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: -19px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #F48022 transparent transparent;
+  }
+  .chat-boxURight{
+    text-align: -webkit-left;
+  }
+  .chat-boxsubortRightPriv {
+    display: inline-block;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    color: #853e07;
+    background-color: #fdd6b8;
+    border-color: #f8c299;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 12px 8px;
+    max-width: 250px;
+  }
+  .chat-boxsubortRightPriv:after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    border-width: 10px;
+    border-style: solid;
+    right: -19px;
+    border-color: transparent transparent transparent #f8c299;
+  }
+  .chat-boxsubortRight { 
+    display: inline-block;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    background-color: #ffffff;
+    color:#214376;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 12px 8px;
+    max-width: 250px;
+  }
+  .chat-boxsubortRight:after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    border-width: 10px;
+    border-style: solid;
+    right: -19px;
+    border-color: transparent transparent transparent #ffffff;
+  }
+  .chat-boxSRight{
+    text-align: -webkit-right;
+  }
+    emoji-picker {
+    width: 100%;
+    height: 350px;
+    --background: #EFF3F9;
+    --border-color:#EFF3F9;
+  }
+  .timeChatFirst{
+    text-align: end;
+    margin-top: 5px;
+    font-size: 12px;
+  }
+  .timeChatLast{
+    text-align: end;
+    margin-top: 5px;
+    font-size: 12px;
+  }
+  .checkicons{
+    font-size: 18px;
+    vertical-align: text-top;
+    color:#c8cdd8;
+  }
+  .checkiconsRead{
+    font-size: 18px;
+    color:#214376;
+    vertical-align: text-top;
+  }
+  .checkiconsDenied{
+    font-size: 18px;
+    color:red;
+    vertical-align: text-top;
+  }
+  .countMsg{
+    width: 22px;
+    height: 22px;
+    padding-top: 5px;
+    background-color: #F48022;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 100%;
+}
+.imageToButtom{
+  width: 24px;
+    background: #ffffff;
+    border-radius: 100%;
+    padding: 3px;
+}
+.popoverMen{
+  position: relative;
+  text-align: start;
+  padding-inline-start: 15px;
+  padding-top: 7px;
+  padding-bottom: 13px;
+  color: #214376;
+  font-size: 15px;
+  background-color: #ffffff;
+}
+.listClass{
+	border-bottom-left-radius: 20px; 
+  border-bottom-right-radius: 20px;
+  background-color: #ffffff;
+}
+.poboverContent{
+  --background: transparent !important;
+    background: transparent !important;
+}
+.spanMenueLeft{
+  position: absolute;
+  left: 8px;
+  padding-top: 1px;
+}
+.spanMenueRight{
+  position: absolute;
+  right: 8px;
+  padding-top: 1px;
+}
+.arrowMenue{
+  font-size: 15px;
+  color: #8496B0;
+}
+.loadeMoreData{
+  padding: 12px;
+  text-align: center;
+  font-size: 13px;
+  color: #f1f5f9;
+  background: #587fbc;
+  width: 250px;
+  border-radius: 25px;
+  margin: 10px 5px;
+}
+.loadMoreCont{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+    .horizontal-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin: 40px 0;
+      position: relative;
+    }
+
+    .divider-text {
+      padding: 5px 12px;
+      background-color: #587fbc; /* لون الخلفية خلف التاريخ */
+      color: #f1f5f9;            /* لون النص */
+      font-size: 14px;
+      border-radius: 20px;
+      z-index: 1;
+      white-space: nowrap;
+    }
+
+    .horizontal-divider::before,
+    .horizontal-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background-color: #cbd5e1; /* لون الخط */
+    }
+
+    .horizontal-divider::before {
+      margin-right: 10px;
+    }
+
+    .horizontal-divider::after {
+      margin-left: 10px;
+    }
+
+.no-click {
+  pointer-events: none;
+  opacity: 0.5;
+}

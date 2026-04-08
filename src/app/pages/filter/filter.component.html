@@ -1,0 +1,42 @@
+<ion-content [fullscreen]="true">
+  <div style="display: flex; flex-direction: column;height: 100%;">
+    <div class="formLoginDiv">
+      <div class="largDiv" style="margin-top: 10px;">
+        <div class="divClose" (click)="functionClosePage()"><ion-icon class="iconClose" name="close"></ion-icon></div>
+        <div class="infoDiv" style="min-height: 50%;">
+          <ion-item class="hidColor" lines="none">
+            <ion-radio-group value="{{selectedOption}}" style="width: 100%;">
+              <ion-item class="ion-item-select"><ion-radio [labelPlacement]="first_dir" class="custom-radio" mode="ios" [justify]="last_dir" value="1"  (click)="selectFilter(1)">{{filter_date_one}}</ion-radio></ion-item>
+              <ion-item class="ion-item-select"><ion-radio [labelPlacement]="first_dir" class="custom-radio" mode="ios" [justify]="last_dir" value="2"  (click)="selectFilter(2)">{{filter_date_tow}}</ion-radio></ion-item>
+              <ion-item class="ion-item-select"><ion-radio [labelPlacement]="first_dir" class="custom-radio" mode="ios" [justify]="last_dir" value="3"  (click)="selectFilter(3)">{{filter_date_three}}</ion-radio></ion-item>
+              <ion-item class="ion-item-select"><ion-radio [labelPlacement]="first_dir" class="custom-radio" mode="ios" [justify]="last_dir" value="4"  (click)="selectFilter(4)">{{filter_date_fore}}</ion-radio></ion-item>
+              <ion-item class="ion-item-select"><ion-radio [labelPlacement]="first_dir" class="custom-radio" mode="ios" [justify]="last_dir" value="5"  (click)="selectFilter(5)">{{filter_date_five}}</ion-radio></ion-item>
+              <ion-item class="ion-item-select"><ion-radio [labelPlacement]="first_dir" class="custom-radio" mode="ios" [justify]="last_dir" value="6"  (click)="selectFilter(6)">{{filter_date_six}}</ion-radio></ion-item>
+              <ion-item class="ion-item-select"><ion-radio [labelPlacement]="first_dir" class="custom-radio" mode="ios" [justify]="last_dir" value="7"  (click)="selectFilter(7)">{{filter_date_seven}}</ion-radio></ion-item>
+            </ion-radio-group>
+          </ion-item>
+          <ion-item class="hidColor" lines="none" *ngIf="showInput==1">
+          <div class="item">
+            <ion-item class="hidColor">
+            <div [ngStyle]="{'direction': dir}" class="input">
+              <ion-input type="text" [(ngModel)]="from_date" [ngModelOptions]="{standalone: true}" placeholder="dd/mm/yyyy"></ion-input>
+              <ion-icon class="iconTime" name="calendar" (click)="functionFilterPickerStart()"></ion-icon>
+            </div>
+            </ion-item>
+            <div class="spaceBet"></div>
+            <ion-item class="hidColor">
+            <div [ngStyle]="{'direction': dir}" class="input">
+               <ion-input type="text" [(ngModel)]="to_date" [ngModelOptions]="{standalone: true}" placeholder="dd/mm/yyyy"></ion-input>
+              <ion-icon class="iconTime" name="calendar" (click)="functionFilterPickerEnd()"></ion-icon>
+            </div>
+            </ion-item>
+        </div>
+        </ion-item>
+        </div>
+        <div class="buttonDiv" *ngIf="showInput==1">
+          <ion-button mode="ios" (click)="filter()">{{filter_Apply}}</ion-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

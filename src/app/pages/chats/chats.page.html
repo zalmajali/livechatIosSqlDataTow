@@ -1,0 +1,160 @@
+<ion-content [fullscreen]="true" (click)="functionCloseMenu()">
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <div>
+        <ion-grid style="padding:0px">
+          <ion-row style="padding:0px">
+              <ion-col class="colImage" size="8">
+                <div class="imageDiv">
+                  <span class="spanIcon"><ion-icon name="{{arrow_back}}" style="font-size: 25px;color: #214376;" (click)="functionBackHome()"></ion-icon></span>
+                  <img src="../../assets/images/logoImage.png" class="imageLogo">
+                  <div class="logoName">
+                    <div>Taqnyat</div>
+                    <div class="logoTitle">{{nameUseId}}</div>
+                  </div>
+                </div>
+              </ion-col>
+              <ion-col class="colIcon" size="4">
+                <div class="divIcon" id="popover-button"><ion-icon name="list" class="searchIcon" ></ion-icon></div>
+                <ion-popover class="divIconpopover" trigger="popover-button" [dismissOnSelect]="true">
+                  <ng-template>
+                    <ion-content>
+                      <ion-list class="listClass">
+                       <div class="{{popoverMen_men}}" (click)="functionContact()">{{view_contact}}</div>
+                       <div class="{{popoverMen_men}}" (click)="functionMenueformation(2)">{{close_chat}} <span class="{{span_menue}}"><ion-icon name="chevron-forward" class="arrowMenue"></ion-icon></span></div>
+                       <div class="{{popoverMen_men}}" (click)="functionMenueformation(1)">{{assign_to}} <span class="{{span_menue}}"><ion-icon name="chevron-forward" class="arrowMenue"></ion-icon></span></div>
+                       <div class="{{popoverMen_men}}" (click)="functionArchive(selectNumber,chatSessionId,nameUseId)">{{archives}}</div>
+                       <div class="{{popoverMen_men}}">{{mute_chat}}</div>
+                        </ion-list>
+                    </ion-content>
+                  </ng-template>
+                </ion-popover>
+              </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+    <div class="formLoginDiv">
+      <div #chatList class="chat-list scrollable-list" (scroll)="onScroll($event)">
+       <div class="loadMoreCont" (click)="loadeMoreData()" *ngIf="showLoadeMore == 1">
+        <div class="loadeMoreData">{{loade_more}}</div>
+      </div>  
+      <div *ngIf="chatVal == 1">
+        <div *ngFor="let messageOne of allMassegesOld">
+          <div class="horizontal-divider">
+            <span class="divider-text">{{messageOne.date}}</span>
+          </div>
+          <div *ngFor="let message of messageOne.data">
+          <div class="{{chat_class_one}}" *ngIf="message.from == 0">
+            <div class="{{chat_class_tow}}">
+              <div [innerHTML]="message.msg" *ngIf="message.checkAudio == 0 && message.checkImage == 0"></div>
+              <div [innerHTML]="message.msg" *ngIf="message.checkAudio == 1"></div>
+              <div [innerHTML]="message.msg" *ngIf="message.checkAudio == 0 && message.checkImage == 1" (click)="showImage(message.image)"></div>
+              <div *ngIf="message.showVal == 1">
+                <ion-icon class="downloadeIconFromUser" name="cloud-download-outline" (click)="downloadFile(message)"></ion-icon>
+                <ion-progress-bar class="progressFromUser" [value]="message.downloadProgress / 100" *ngIf="message.downloadProgress > 0 && message.downloadProgress != 100"></ion-progress-bar>
+                <p *ngIf="message.downloadProgress > 0 && message.downloadProgress != 100">{{message.downloadProgress}}%</p>
+              </div>
+              <div class="timeChatFirst">{{message.date}} {{message.time}}</div>
+            </div>
+          </div>
+          <div class="{{chat_class_three}}" *ngIf="message.from == 1">
+           <div [ngClass]="message.private_note == 1 ? chat_class_fore_priv : chat_class_fore">
+              <div [innerHTML]="message.msg" *ngIf="message.checkAudio == 0 && message.checkImage == 0"></div>
+              <div [innerHTML]="message.msg" *ngIf="message.checkAudio == 1"></div>
+              <div [innerHTML]="message.msg" *ngIf="message.checkAudio == 0 && message.checkImage == 1" (click)="showImage(message.image)"></div>
+              <div *ngIf="message.showVal == 1">
+                <ion-icon class="downloadeIconFromMe" name="cloud-download-outline" (click)="downloadFile(message)"></ion-icon>
+                <ion-progress-bar class="progressFromMe" [value]="message.downloadProgress / 100" *ngIf="message.downloadProgress > 0 && message.downloadProgress != 100"></ion-progress-bar>
+                <p *ngIf="message.downloadProgress > 0 && message.downloadProgress != 100">{{message.downloadProgress}}%</p>
+              </div>
+              <div class="timeChatLast">{{message.date}} {{message.time}}
+                <ion-icon name="checkmark-outline" class="checkicons" *ngIf="message.msg_status == 'sent'"></ion-icon>
+                <ion-icon name="checkmark-done-outline" class="checkicons" *ngIf="message.msg_status == 'delivered'"></ion-icon>
+                <ion-icon name="checkmark-done-outline" class="checkiconsRead" *ngIf="message.msg_status == 'read'"></ion-icon>
+                <ion-icon name="information-circle-outline" class="checkiconsDenied" (click)="displayError(message.msgFail)" *ngIf="message.msg_status == 'fail'"></ion-icon>
+              </div>
+            </div>
+          </div> 
+        </div>
+        </div>
+      </div>
+        <div *ngFor="let message of allMasseges">
+          <div class="{{chat_class_one}}" *ngIf="message.from == 0">
+            <div class="{{chat_class_tow}}">
+              <div [innerHTML]="message.msg" *ngIf="message.checkAudio == 0 && message.checkImage == 0"></div>
+              <div [innerHTML]="message.msg" *ngIf="message.checkAudio == 1"></div>
+              <div [innerHTML]="message.msg" *ngIf="message.checkAudio == 0 && message.checkImage == 1" (click)="showImage(message.image)"></div>
+              <div *ngIf="message.showVal == 1">
+                <ion-icon class="downloadeIconFromUser" name="cloud-download-outline" (click)="downloadFile(message)"></ion-icon>
+                <ion-progress-bar class="progressFromUser" [value]="message.downloadProgress / 100" *ngIf="message.downloadProgress > 0 && message.downloadProgress != 100"></ion-progress-bar>
+                <p *ngIf="message.downloadProgress > 0 && message.downloadProgress != 100">{{message.downloadProgress}}%</p>
+              </div>
+              <div class="timeChatFirst">{{message.date}} {{message.time}}</div>
+            </div>
+          </div>
+          <div class="{{chat_class_three}}" *ngIf="message.from == 1">
+            <div [ngClass]="message.private_note == 1 ? chat_class_fore_priv : chat_class_fore">
+              <div [innerHTML]="message.msg" *ngIf="message.checkAudio == 0 && message.checkImage == 0"></div>
+              <div [innerHTML]="message.msg" *ngIf="message.checkAudio == 1"></div>
+              <div [innerHTML]="message.msg" *ngIf="message.checkAudio == 0 && message.checkImage == 1" (click)="showImage(message.image)"></div>
+              <div *ngIf="message.showVal == 1">
+               <ion-icon class="downloadeIconFromMe" name="cloud-download-outline" (click)="downloadFile(message)"></ion-icon>
+                <ion-progress-bar class="progressFromMe" [value]="message.downloadProgress / 100" *ngIf="message.downloadProgress > 0 && message.downloadProgress != 100"></ion-progress-bar>
+                <p *ngIf="message.downloadProgress > 0 && message.downloadProgress != 100">{{message.downloadProgress}}%</p>
+              </div>
+              <div class="timeChatLast">{{message.date}} {{message.time}}
+                <ion-icon name="checkmark-outline" class="checkicons" *ngIf="message.msg_status == 'sent'"></ion-icon>
+                <ion-icon name="checkmark-done-outline" class="checkicons" *ngIf="message.msg_status == 'delivered'"></ion-icon>
+                <ion-icon name="checkmark-done-outline" class="checkiconsRead" *ngIf="message.msg_status == 'read'"></ion-icon>
+                <ion-icon name="information-circle-outline" class="checkiconsDenied" (click)="displayError(message.msgFail)" *ngIf="message.msg_status == 'fail'"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</ion-content>
+<ion-footer class="ion-no-border footer" *ngIf="showSendMessage==1">
+  <ion-header class="ion-no-border footerPad">
+    <div>
+      <ion-item lines="none" class="{{chat_class_five}}">
+          <div class="divImages"><img src="../../assets/images/smile.png" class="{{chat_class_six}}" (click)="toggled = !toggled"></div>
+          <ion-textarea [(ngModel)]="onMessage" placeholder="{{message_text}}" mode='ios' id="myTextarea" auto-grow="true" ></ion-textarea>
+          <div class="divImages"><img src="../../assets/images/links.png" class="smileRight" (click)="presentPopover($event)"></div>
+          <div class="divImages"><img src="{{imageSelect}}" class="{{send_note_class}}" (click)="changeTypeSend(sendMsgType)"></div>
+      </ion-item>
+      <div class="{{chat_class_seven}}">
+        <div style="text-align: center;padding-bottom: 5px;padding-top: 5px;">
+          <div style="text-align: -webkit-center;padding-bottom: 5px;">
+            <div *ngIf="countOfNewMsg!=0" class="countMsg">{{countOfNewMsg}}</div>
+          </div>
+          <div *ngIf="isScroolTo==0" (click)="functionGoToButtom()"><img src="../../assets/images/arrow.png" class="imageToButtom"></div>
+        </div>
+        <div (click)="addMessage(sendMsgType)" [class.no-click]="isDisabled"><img src="../../assets/images/{{send_image}}" class="imageLogo"></div>
+      </div>
+    </div>
+  </ion-header>
+  <emoji-picker class="light" (emoji-click)="functionSelectEmoji($event.detail)" *ngIf="toggled"></emoji-picker>
+</ion-footer>
+<ion-footer class="ion-no-border footer" *ngIf="showSendMessage==0">
+  <ion-header class="ion-no-border footerPad">
+    <div>
+      <ion-item lines="none" class="{{chat_class_five}}">
+          <div class="divImages"><img src="../../assets/images/smile.png" class="{{chat_class_six}}" (click)="toggled = !toggled"></div>
+          <ion-textarea [(ngModel)]="onMessage" placeholder="{{send_note}}" mode='ios' id="myTextarea" auto-grow="true" ></ion-textarea>
+      </ion-item>
+      <div class="{{chat_class_seven}}">
+        <div style="text-align: center;padding-bottom: 5px;padding-top: 5px;">
+          <div style="text-align: -webkit-center;padding-bottom: 5px;">
+            <div *ngIf="countOfNewMsg!=0" class="countMsg">{{countOfNewMsg}}</div>
+          </div>
+          <div *ngIf="isScroolTo==0" (click)="functionGoToButtom()"><img src="../../assets/images/arrow.png" class="imageToButtom"></div>
+        </div>
+        <div (click)="addMessage(1)" [class.no-click]="isDisabled"><img src="../../assets/images/{{send_image}}" class="imageLogo"></div>
+      </div>
+    </div>
+  </ion-header>
+  <emoji-picker class="light" (emoji-click)="functionSelectEmoji($event.detail)" *ngIf="toggled"></emoji-picker>
+</ion-footer>
