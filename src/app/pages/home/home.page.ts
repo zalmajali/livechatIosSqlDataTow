@@ -351,7 +351,7 @@ private startPolling() {
       this.returnChatArray[index]['mobile'] = chat.mobile;
       this.returnChatArray[index]['userName'] = chat.user_name;
       this.returnChatArray[index]['chatSessionId'] = chat.chatSession_id;
-      this.returnChatArray[index]['badge'] = chat.badge.toFixed(1);
+      this.returnChatArray[index]['badge'] = parseInt(chat.badge);
       this.returnChatArray[index]['name'] = chat.name || chat.mobile;
       this.returnChatArray[index]['countMsg'] =
         chat.badge != 0 ? this.msg_count : 0;
@@ -370,7 +370,7 @@ private startPolling() {
       this.returnChatArrayQue[index]['mobile'] = chat.mobile;
       this.returnChatArrayQue[index]['userName'] = chat.user_name;
       this.returnChatArrayQue[index]['chatSessionId'] = chat.chatSession_id;
-      this.returnChatArrayQue[index]['badge'] = chat.badge.toFixed(1);;
+      this.returnChatArrayQue[index]['badge'] = parseInt(chat.badge);
       this.returnChatArrayQue[index]['name'] = chat.name || chat.mobile;
       this.returnChatArrayQue[index]['countMsg'] = chat.badge != 0 ? this.msg_count : 0;
     });
