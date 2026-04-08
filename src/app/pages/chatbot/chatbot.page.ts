@@ -263,7 +263,7 @@ ngOnDestroy() {
       this.returnChatArray[index]['mobile'] = chat.mobile;
       this.returnChatArray[index]['userName'] = chat.user_name;
       this.returnChatArray[index]['chatSessionId'] = chat.chatSession_id;
-      this.returnChatArray[index]['badge'] = chat.badge;
+      this.returnChatArray[index]['badge'] = chat.badge.toFixed(1);
       this.returnChatArray[index]['name'] = chat.name || chat.mobile;
       this.returnChatArray[index]['countMsg'] =
         chat.badge != 0 ? this.msg_count : 0;

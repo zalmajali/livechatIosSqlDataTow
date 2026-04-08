@@ -882,7 +882,6 @@ public error_downloade_file_tow:any;
       cssClass:"my-custom-modal-temp"
     });
     model.onDidDismiss().then((data):any=>{
-
     });
     await model.present();
   }
