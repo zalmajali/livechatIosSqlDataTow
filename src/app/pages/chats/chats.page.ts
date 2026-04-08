@@ -943,7 +943,7 @@ public error_downloade_file_tow:any;
             let checkImage = 0;
             let image = "";
             let doneReadAudio = 1;
-            alert(chatBot[j])
+            alert(chatBot[j].txt)
             if (chatBot[j].txt.includes(Txt2) || chatBot[j].txt.includes(Txt3)) {
               msg = await this.parseResponse(chatBot[j].txt);
             }
@@ -1030,7 +1030,7 @@ public error_downloade_file_tow:any;
             let checkImage = 0;
             let image = "";
             let doneReadAudio = 1;
-            alert(chat[jj])
+            alert(chat[jj].txt)
             if (chat[jj].txt.includes(Txt2) || chat[jj].txt.includes(Txt3)) {
               msg = await this.parseResponse(chat[jj].txt);
             } 
@@ -1177,7 +1177,7 @@ public error_downloade_file_tow:any;
                   let image = "";
                   let checkImage = 0;
                   let doneReadAudio = 1;
-                  alert(chat[keyChat])
+                  alert(chat[keyChat].txt)
                   if (chat[keyChat].txt.includes(Txt2) || chat[keyChat].txt.includes(Txt3)) {
                     msg = await this.parseResponse(chat[keyChat].txt);
                   } 
