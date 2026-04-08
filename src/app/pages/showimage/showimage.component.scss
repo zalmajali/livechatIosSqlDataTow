@@ -6,9 +6,3 @@
     border-radius: 5px;
     overflow-y: auto;
 }
-.image-container {
-  align-items: center;
-  height: 100vh; /* يأخذ كامل ارتفاع الشاشة */
-  width: 100%;
-  overflow: auto; /* في حال كانت الصورة أكبر من الشاشة */
-}
