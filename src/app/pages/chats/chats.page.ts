@@ -874,6 +874,7 @@ public error_downloade_file_tow:any;
     return null;
   }
  async showImage(image:any){
+  alert(image)
     this.modalController.dismiss({});
     let model = await this.modalController.create({
       component:ShowimageComponent,
@@ -963,6 +964,7 @@ public error_downloade_file_tow:any;
                     }
                 }
             }
+            alert(image)
             msg = msg.replace(/\r\n/g, "<br>");
             if(!checkAudio)
               msg = this.sanitizer.bypassSecurityTrustHtml(msg);
@@ -1048,6 +1050,7 @@ public error_downloade_file_tow:any;
                     }
                 }
             }
+            alert(image)
             msg = msg.replace(/\r\n/g, "<br>");
             if(!checkAudio)
               msg = this.sanitizer.bypassSecurityTrustHtml(msg);
@@ -1193,6 +1196,7 @@ public error_downloade_file_tow:any;
                           }
                       }
                   }
+                  alert(image)
                   msg = msg.replace(/\r\n/g, "<br>");
                   if(!checkAudio)
                     msg = this.sanitizer.bypassSecurityTrustHtml(msg);
