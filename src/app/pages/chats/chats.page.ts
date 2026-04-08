@@ -874,11 +874,12 @@ public error_downloade_file_tow:any;
     return null;
   }
  async showImage(image:any){
+  let images = "<img [src]='"+image+"'"+"/>";
     this.modalController.dismiss({});
     let model = await this.modalController.create({
       component:ShowimageComponent,
       animated:true,
-      componentProps:{image:image},
+      componentProps:{image:images},
       cssClass:"my-custom-modal-temp"
     });
     model.onDidDismiss().then((data):any=>{
