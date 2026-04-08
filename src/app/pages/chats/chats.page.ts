@@ -874,7 +874,8 @@ public error_downloade_file_tow:any;
     return null;
   }
  async showImage(image:any){
-  let images = "<img [src]='"+image+"'"+"/>";
+  let images = "<img src='"+image+"'"+"/>";
+  alert(images)
     this.modalController.dismiss({});
     let model = await this.modalController.create({
       component:ShowimageComponent,
