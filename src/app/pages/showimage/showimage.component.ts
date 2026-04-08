@@ -10,10 +10,7 @@ export class ShowimageComponent  implements OnInit {
 @Input() image: string | any;
   constructor(private modalController: ModalController) { }
 
-ngOnInit() {
-  alert("sdfsdf")
-  alert(this.image)
-}
+ngOnInit() {}
  close(){
     this.modalController.dismiss({
     })
