@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* يأخذ كامل ارتفاع الشاشة */
+   height: 100dvh; /* يأخذ كامل ارتفاع الشاشة */
   width: 100%;
   overflow: auto; /* في حال كانت الصورة أكبر من الشاشة */
 }
