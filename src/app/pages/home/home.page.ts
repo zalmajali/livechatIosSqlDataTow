@@ -182,6 +182,7 @@ async ngOnInit() {
   await this.loadFromApi();
   await this.startPolling();
    await this.checkLoginDataUser();
+   alert("asdasdasd");
   let showLoading = await this.storage.get('showLoading');
   if (showLoading == 0) {
     await this.storage.set('showLoading', '1');
