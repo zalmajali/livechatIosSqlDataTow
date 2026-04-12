@@ -9,8 +9,8 @@
                   <span class="spanIcon"><ion-icon name="{{arrow_back}}" style="font-size: 25px;color: #214376;" (click)="functionBackHome()"></ion-icon></span>
                   <img src="../../assets/images/logoImage.png" class="imageLogo">
                   <div class="logoName">
-                    <div>Taqnyat</div>
-                    <div class="logoTitle">{{nameUseId}}</div>
+                    <div class="logoTitle">{{selectNumber}} <span *ngIf="mobileUseId" class="spanTag">{{mobileUseId}}</span></div>
+                    <div class="divNumber">{{nameUseId}}</div>
                   </div>
                 </div>
               </ion-col>

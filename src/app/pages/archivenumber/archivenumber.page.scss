@@ -111,26 +111,27 @@ ion-input{
 	font-size: 16px;
     position: relative;
 }
-.divName{
-    font-weight: bold;
-    color: #214376;
-    white-space: nowrap; 
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding-right: 10px;
-    padding-left: 10px;
-    line-height: 20px;
-}
 .divNumber{
-	padding-top: 5px;
-	font-size: 15px;
+   font-weight: bold;
+    padding-top: 0px;
+    font-size: 12px;
     color: #8496B0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     line-height: 20px;
-    padding-right: 16px;
-    padding-left: 16px;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+.divName{
+    font-weight: bold;
+    font-size: 15px;
+    color: #214376;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 1px 8px;
+    line-height: 20px;
 }
 .largDiv{
     padding-top: 5px;

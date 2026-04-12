@@ -122,6 +122,7 @@ public menuDirectionTow: any;
 public showPassword: boolean = false;
 public dbInstance!: SQLiteObject;
 public checkDataConvert: any=0;
+public mobileUseId: any="";
 public allMassegesCheckData: Set<any> = new Set();
 public chat_class_fore_priv: any;
 public send_note: any;
@@ -306,7 +307,13 @@ public error_downloade_file_tow:any;
         await this.storage.set('selectedChatSessionId',this.chatSessionId);
       }
       if(params['name']!="" && params['name']!=null && params['name']!=undefined && params['name']!=0){
-        this.nameUseId = params['name'];
+        if (params['name'] && params['name'].includes('&')) {
+          let parts = params['name'].split('&');
+          this.nameUseId = parts[0].trim();
+          this.mobileUseId = parts[1].trim();
+        } else {
+          this.nameUseId = params['name'];
+        }
       }
       if(params['backUrl']!="" && params['backUrl']!=null && params['backUrl']!=undefined && params['backUrl']!=0){
         this.backUrl = params['backUrl'];
