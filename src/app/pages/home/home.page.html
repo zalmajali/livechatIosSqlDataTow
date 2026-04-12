@@ -33,7 +33,7 @@
               <div [ngStyle]="{'float': floatD}"><img src="../../assets/images/logoImage.png" class="imageLogo"></div>
                 <div (click)="functionChats(items.mobile,items.chatSessionId,items.userName,items.name)">
                   <div class="diveNameInfo">
-                    <div class="divName">{{items.mobile}} <span class="spanTag">{{items.userName}}</span></div>
+                    <div class="divName">{{items.mobile}} <span class="spanTag" *ngIf="items.userName">{{items.userName}}</span></div>
                     <div class="divNumber">{{items.name}}</div>
                     <div [ngClass]="{'numNewMsgRight': language=='ar', 'numNewMsgLeft': language!='ar'}" *ngIf="items.badge!=0"><div class="countMsg">{{items.badge}}</div></div>
                   </div>
@@ -51,7 +51,7 @@
               <div [ngStyle]="{'float': floatD}"><img src="../../assets/images/logoImage.png" class="imageLogo"></div>
                 <div (click)="functionChats(items.mobile,items.chatSessionId,items.userName,items.name)">
                  <div class="diveNameInfo">
-                    <div class="divName">{{items.mobile}} <span class="spanTag">{{items.userName}}</span></div>
+                    <div class="divName">{{items.mobile}} <span class="spanTag" *ngIf="items.userName">{{items.userName}}</span></div>
                     <div class="divNumber">{{items.name}}</div>
                     <div [ngClass]="{'numNewMsgRight': language=='ar', 'numNewMsgLeft': language!='ar'}" *ngIf="items.badge!=0"><div class="countMsg">{{items.badge}}</div></div>
                   </div>
@@ -73,7 +73,7 @@
             <div [ngStyle]="{'float': floatD}"><img src="../../assets/images/logoImage.png" class="imageLogo"></div>
               <div (click)="functionChatsQue(items.mobile,items.chatSessionId,items.userName,items.name)">
                 <div class="diveNameInfo">
-                  <div class="divName">{{items.mobile}} <span class="spanTag">{{items.userName}}</span></div>
+                  <div class="divName">{{items.mobile}} <span class="spanTag" *ngIf="items.userName">{{items.userName}}</span></div>
                     <div class="divNumber">{{items.name}}</div>
                   <div [ngClass]="{'numNewMsgRight': language=='ar', 'numNewMsgLeft': language!='ar'}" *ngIf="items.badge!=0"><div class="countMsg">{{items.badge}}</div></div>
                 </div>
@@ -91,7 +91,7 @@
             <div [ngStyle]="{'float': floatD}"><img src="../../assets/images/logoImage.png" class="imageLogo"></div>
               <div (click)="functionChatsQue(items.mobile,items.chatSessionId,items.userName,items.name)">
                 <div class="diveNameInfo">
-                   <div class="divName">{{items.mobile}} <span class="spanTag">{{items.userName}}</span></div>
+                   <div class="divName">{{items.mobile}} <span class="spanTag" *ngIf="items.userName">{{items.userName}}</span></div>
                     <div class="divNumber">{{items.name}}</div>
                   <div [ngClass]="{'numNewMsgRight': language=='ar', 'numNewMsgLeft': language!='ar'}" *ngIf="items.badge!=0"><div class="countMsg">{{items.badge}}</div></div>
                 </div>
